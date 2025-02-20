@@ -1,6 +1,15 @@
-.cabecalho{
-background-color: mediumpurple;
-color: azure;
-display: flex;
+.cabecalho {
+    background-color: mediumpurple;
+    color: azure;
+    display: flex;
+    padding: 24px 0;
 
+}
+
+.section1 {
+    background-color: violet;
+}
+
+.section2 {
+    background-color: blueviolet;
 }
