@@ -8,8 +8,10 @@
 
 .section1 {
     background-color: violet;
+    padding: 100px;
 }
 
 .section2 {
-    background-color: blueviolet;
+    background-color: #8a2be2;
+    padding: 100px;
 }
