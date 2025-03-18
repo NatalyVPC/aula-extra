@@ -7,20 +7,20 @@
 }
 
 .secao {
-    background-image:linear-gradient(pink, #ad44ad);
+    background-image: linear-gradient(pink, #ad44ad);
     padding: 100px;
 }
 
 .secao2 {
-    background-image:linear-gradient(#ad44ad,#1a7ac9 );
+    background-image: linear-gradient(#ad44ad, #1a7ac9);
     padding: 100px;
 }
 
-    .cabecalho-imagem{
-        width: 20%;
-    }
+.cabecalho-imagem {
+    width: 20%;
+}
 
-    .rodape{
-        background-image:linear-gradient(#1a7ac9, black);
-        color: aquamarine;
-    }
+.rodape {
+    background-image: linear-gradient(#1a7ac9, black);
+    color: aquamarine;
+}
