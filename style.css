@@ -1,5 +1,5 @@
 .cabecalho {
-    background-image: linear-gradient(black, purple);
+    background-image: linear-gradient(black, pink);
     color: rgb(255, 255, 255);
     display: flex;
     padding: 21px 0;
@@ -7,12 +7,12 @@
 }
 
 .section1 {
-    background-color: rgb(173, 68, 173);
+    background-image:linear-gradient(pink, #ad44ad);
     padding: 100px;
 }
 
 .section2 {
-    background-color: #1a7ac9;
+    background-image:linear-gradient(#ad44ad,#1a7ac9 );
     padding: 100px;
 }
 
@@ -21,6 +21,6 @@
     }
 
     .rodape{
-        background-color: rgb(13, 141, 40);
+        background-image:linear-gradient(#1a7ac9, black);
         color: aquamarine;
     }
