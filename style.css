@@ -6,12 +6,12 @@
 
 }
 
-.section1 {
+.secao {
     background-image:linear-gradient(pink, #ad44ad);
     padding: 100px;
 }
 
-.section2 {
+.secao2 {
     background-image:linear-gradient(#ad44ad,#1a7ac9 );
     padding: 100px;
 }
