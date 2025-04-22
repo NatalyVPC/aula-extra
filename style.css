@@ -18,11 +18,26 @@
 
 
 .rodape {
-    background-image: linear-gradient(#1a7ac9, black);
+    background-image: linearodape_imgr-gradient(#1a7ac9, black);
     color: aquamarine;
 }
 
 .rodape_img {
+    width: 12%;
+    height: 12%;
+}
+
+.cabecalho_img {
+    width: 12%;
+    height: 12%;
+}
+
+.secao_img {
+    width: 12%;
+    height: 12%;
+}
+
+.secao2_img {
     width: 12%;
     height: 12%;
 }
