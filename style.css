@@ -5,6 +5,11 @@
     padding: 21px 0
 }
 
+.epic {
+    background-image: linear-gradient(pink, pink);
+    padding: 100px;
+}
+
 .secao {
     background-image: linear-gradient(pink, #ad44ad);
     padding: 100px;
