@@ -1,14 +1,8 @@
-.b {
-    background-image: black;
+.cabecalho {
+    background-image: linear-gradient(black, pink);
     color: aliceblue;
     display: flex;
     padding: 21px 0
-}
-
-.cabecalho {
-    background-image: linear-gradient(black, pink);
-    padding: 100px;
-
 }
 
 .secao {
