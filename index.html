@@ -1,42 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MUSICAL</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Trollou.com - Pegadinhas Online</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #ffe600;
+      text-align: center;
+      padding: 2rem;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .prank {
+      background: #fff;
+      border: 3px dashed #f00;
+      padding: 1.5rem;
+      margin: 1rem auto;
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 5px 5px 0px #000;
+    }
+
+    button {
+      background-color: #ff4081;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+
+    button:hover {
+      background-color: #e91e63;
+    }
+  </style>
 </head>
-
 <body>
-    <HEADer class="cabecalho">
-        <h1>EPIC:THE MUSICAL</h1>
-    </HEADer>
+  <h1>🎉 Trollou.com 🎉</h1>
+  <p>Escolha uma pegadinha abaixo e se divirta!</p>
 
-    <section class="epic">
-            <img class="cabecalho_img" src="Jorge_Rivera-Herrans.webp" alt="Criador e principal cantor">
-            <h2> Criador e principal cantor</h2>
+  <div class="prank">
+    <h2>Barulho de Gás Vindo do PC</h2>
+    <button onclick="playFart()">Ativar</button>
+  </div>
 
-    </section>
+  <div class="prank">
+    <h2>Tela Azul Falsa</h2>
+    <button onclick="fakeBSOD()">Ativar</button>
+  </div>
 
-    </section>
-    <section class="secao">
-        <img class="secao_img" src="download.jpg" alt="Odysseus">
-        <h3>Odysseus</h3>
-    </section>
-    
-    <section class="secao2">
-        <img class="secao2_img" src="images.jpg" alt="Penelope">
-        <h4>Penelope</h4>
-    </section>
+  <div class="prank">
+    <h2>Mouse Invertido</h2>
+    <button onclick="invertMouse()">Ativar</button>
+  </div>
 
-    <footer class="rodape">
-        <img class="rodape_img" src="Epic_The_Musical_Album_Cover.webp" alt="EPIC">
-        <a href="https://www.youtube.com/watch?v=NlGaUlbh52Y">
-            <p>EPIC:THE MUSICAL </p>
-        </a>
-    </footer>
+  <audio id="fartSound" src="https://www.soundjay.com/human/fart-01.mp3" preload="auto"></audio>
 
+  <script>
+    function playFart() {
+      document.getElementById('fartSound').play();
+    }
+
+    function fakeBSOD() {
+      const bsod = document.createElement('div');
+      bsod.style.position = 'fixed';
+      bsod.style.top = '0';
+      bsod.style.left = '0';
+      bsod.style.width = '100vw';
+      bsod.style.height = '100vh';
+      bsod.style.backgroundColor = '#0000AA';
+      bsod.style.color = '#fff';
+      bsod.style.fontSize = '2rem';
+      bsod.style.padding = '2rem';
+      bsod.style.zIndex = '9999';
+      bsod.innerHTML = "🧨 ERRO FATAL!<br><br>Sistema travado...<br><br>Pressione qualquer tecla para reiniciar.";
+      document.body.appendChild(bsod);
+      document.addEventListener('keydown', () => bsod.remove(), { once: true });
+    }
+
+    function invertMouse() {
+      document.body.style.transform = 'rotate(180deg)';
+    }
+  </script>
 </body>
-
 </html>
