@@ -1,124 +1,127 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Trollou.com - Pegadinhas Online</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flashcards - Pensamento Computacional</title>
   <style>
     body {
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background-color: #ffe600;
-      text-align: center;
-      padding: 2rem;
-      color: #333;
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
     }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .prank {
-      background: #fff;
-      border: 3px dashed #f00;
-      padding: 1.5rem;
-      margin: 1rem auto;
-      width: 300px;
-      border-radius: 10px;
-      box-shadow: 5px 5px 0px #000;
-    }
-
-    button {
-      background-color: #ff4081;
-      color: white;
-      border: none;
-      padding: 0.7rem 1.2rem;
-      border-radius: 8px;
-      font-size: 1rem;
+    .card {
+      width: 250px;
+      height: 150px;
+      perspective: 1000px;
       cursor: pointer;
-      margin-top: 0.5rem;
     }
 
-    button:hover {
-      background-color: #e91e63;
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
     }
 
-    #fleeButton {
+    .card.flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
       position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .card-front {
+      background-color: #0077b6;
+      color: white;
+    }
+
+    .card-back {
+      background-color: #90e0ef;
+      color: #001219;
+      transform: rotateY(180deg);
     }
   </style>
 </head>
 <body>
-  <h1>🎉 Trollou.com 🎉</h1>
-  <p>Escolha uma pegadinha abaixo e se divirta!</p>
 
-  <div class="prank">
-    <h2>Barulho de Gás Vindo do PC</h2>
-    <button onclick="playFart()">Ativar</button>
-  </div>
-
-  <div class="prank">
-    <h2>Tela Azul Falsa</h2>
-    <button onclick="fakeBSOD()">Ativar</button>
-  </div>
-
-  <div class="prank">
-    <h2>Mouse Invertido</h2>
-    <button onclick="invertMouse()">Ativar</button>
-  </div>
-
-  <div class="prank">
-    <h2>Botão Fujão</h2>
-    <button onclick="startFleeButton()">Ativar</button>
-  </div>
-
-  <audio id="fartSound" src="https://www.soundjay.com/human/fart-01.mp3" preload="auto"></audio>
-
+  <!-- Flashcards -->
   <script>
-    function playFart() {
-      document.getElementById('fartSound').play();
-    }
+    const flashcards = [
+      {
+        question: "Qual é a história principal do musical?",
+        answer: "O musical conta a história de um herói mitológico em uma jornada épica através de várias sagas, inspiradas na mitologia grega. "
+      },
+      {
+        question: "Quais são os dois atos do musical?",
+        answer: "O musical é dividido em dois atos: o Ato 1 e o Ato 2, cada um com suas próprias sagas."
+      },
+      {
+        question: "Quantas sagas compõem cada ato?",
+        answer: "Cada ato é composto por nove sagas, totalizando 18 sagas na obra completa. "
+      },
+      {
+        question: "Quais são os nomes das sagas do Ato 1?",
+        answer: "As sagas do Ato 1 são: A Saga de Tróia, A Saga do Ciclope, A Saga do Oceano, A Saga de Circe, e A Saga do Submundo."
+      },
+      {
+        question: "Qual é o nome da saga no Ato 2?",
+        answer: "A única saga do Ato 2 mencionada é A Saga do Trovão. "
+      },
+      {
+        question: "Quantas músicas há em cada ato? ",
+        answer: "Cada ato do musical contém 20 músicas, totalizando 40 músicas na obra completa. "
+      },
+      {
+        question: "Quem é o criador do musical?",
+        answer: "O musical foi escrito e produzido pelo músico porto-riquenho Jorge Rivera-Herrans. "
+      },
+      {
+        question: "Em que formato as sagas foram lançadas? ",
+        answer: "Cada saga foi lançada individualmente em formato de EP (Extended Play). "
+      },
+      {
+        question: "O musical é totalmente cantado?",
+        answer: "Sim, "Epic: The Musical" é um musical totalmente cantado. "
+      },
+      {
+        question: "Quais são os temas abordados em "EPIC: The Musical"?",
+        answer: "O musical explora temas como jornada, destino, família, amor, traição, vingança e redenção"
+      }
+    ];
 
-    function fakeBSOD() {
-      const bsod = document.createElement('div');
-      bsod.style.position = 'fixed';
-      bsod.style.top = '0';
-      bsod.style.left = '0';
-      bsod.style.width = '100vw';
-      bsod.style.height = '100vh';
-      bsod.style.backgroundColor = '#0000AA';
-      bsod.style.color = '#fff';
-      bsod.style.fontSize = '2rem';
-      bsod.style.padding = '2rem';
-      bsod.style.zIndex = '9999';
-      bsod.innerHTML = "🧨 ERRO FATAL!<br><br>Sistema travado...<br><br>Pressione qualquer tecla para reiniciar.";
-      document.body.appendChild(bsod);
-      document.addEventListener('keydown', () => bsod.remove(), { once: true });
-    }
-
-    function invertMouse() {
-      document.body.style.transform = 'rotate(180deg)';
-    }
-
-    function startFleeButton() {
-      const fleeBtn = document.createElement('button');
-      fleeBtn.id = 'fleeButton';
-      fleeBtn.textContent = 'Clique Aqui!';
-      document.body.appendChild(fleeBtn);
-      moveFleeButtonRandom(fleeBtn);
-
-      fleeBtn.addEventListener('mouseover', () => {
-        moveFleeButtonRandom(fleeBtn);
+    flashcards.forEach(card => {
+      const cardDiv = document.createElement('div');
+      cardDiv.className = 'card';
+      cardDiv.innerHTML = `
+        <div class="card-inner">
+          <div class="card-front">${card.question}</div>
+          <div class="card-back">${card.answer}</div>
+        </div>
+      `;
+      cardDiv.addEventListener('click', () => {
+        cardDiv.classList.toggle('flipped');
       });
-    }
-
-    function moveFleeButtonRandom(button) {
-      const maxX = window.innerWidth - 150;
-      const maxY = window.innerHeight - 60;
-      const randX = Math.floor(Math.random() * maxX);
-      const randY = Math.floor(Math.random() * maxY);
-      button.style.left = `${randX}px`;
-      button.style.top = `${randY}px`;
-    }
+      document.body.appendChild(cardDiv);
+    });
   </script>
+
 </body>
 </html>
